@@ -1,0 +1,467 @@
+[
+  {
+    "packet_id": "demo-math-001",
+    "instance_id": "demo-math-001",
+    "family": "math_reasoning",
+    "endpoint_state": {
+      "goal": "Give the final number of apples.",
+      "facts": [
+        "Janet starts with 7 apples and buys 3 more. How many apples does she have?"
+      ],
+      "entities": [],
+      "constraints": [
+        {
+          "type": "condition",
+          "key": "answer_value",
+          "params": {
+            "expected": "10"
+          },
+          "instruction_id": "",
+          "kwargs": {}
+        }
+      ],
+      "output_contract": {
+        "format": "short_answer",
+        "required_fields": [],
+        "constraints": {}
+      },
+      "verifier_spec": {
+        "type": "numeric_match",
+        "expected": "10",
+        "tolerance": 0.001
+      },
+      "environment": {},
+      "reference": {},
+      "lifecycle": [],
+      "superseded": [],
+      "model_commitments": []
+    },
+    "paths": {
+      "direct": {
+        "path_type": "direct",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Janet starts with 7 apples and buys 3 more. How many apples does she have?"
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Give the final number of apples.",
+          "facts": [
+            "Janet starts with 7 apples and buys 3 more. How many apples does she have?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "answer_value",
+              "params": {
+                "expected": "10"
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "numeric_match",
+            "expected": "10",
+            "tolerance": 0.001
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 1,
+        "num_external_calls": 0,
+        "has_revision": false,
+        "revision_types": []
+      },
+      "introduce_only": {
+        "path_type": "introduce_only",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Janet starts with 7 apples."
+          },
+          {
+            "role": "assistant",
+            "content": "Understood."
+          },
+          {
+            "role": "user",
+            "content": "She buys 3 more. How many apples does she have?"
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Give the final number of apples.",
+          "facts": [
+            "Janet starts with 7 apples and buys 3 more. How many apples does she have?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "answer_value",
+              "params": {
+                "expected": "10"
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "numeric_match",
+            "expected": "10",
+            "tolerance": 0.001
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 2,
+        "num_external_calls": 0,
+        "has_revision": false,
+        "revision_types": []
+      },
+      "revision_containing": {
+        "path_type": "revision_containing",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Janet starts with 5 apples and buys 3 more. How many apples does she have?"
+          },
+          {
+            "role": "assistant",
+            "content": "Understood."
+          },
+          {
+            "role": "user",
+            "content": "Correction: Janet started with 7 apples, not 5. How many does she have after buying 3?"
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Give the final number of apples.",
+          "facts": [
+            "Janet starts with 7 apples and buys 3 more. How many apples does she have?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "answer_value",
+              "params": {
+                "expected": "10"
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "numeric_match",
+            "expected": "10",
+            "tolerance": 0.001
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 2,
+        "num_external_calls": 0,
+        "has_revision": true,
+        "revision_types": [
+          "replace"
+        ]
+      }
+    },
+    "accepted_answers": [
+      "10"
+    ],
+    "verifier_spec": {
+      "type": "numeric_match",
+      "expected": "10",
+      "tolerance": 0.001
+    },
+    "revision_depth": "single",
+    "terminal_revision_type": "replace",
+    "num_revisions": 1,
+    "selection_label": "coverage_fallback",
+    "construction_scores": {},
+    "stale_answer_witness": "8",
+    "metadata": {
+      "source": "hand_authored_demo",
+      "semantic_review": "hand_checked"
+    }
+  },
+  {
+    "packet_id": "demo-qa-001",
+    "instance_id": "demo-qa-001",
+    "family": "structured_qa",
+    "endpoint_state": {
+      "goal": "Answer the multiple-choice question with one letter.",
+      "facts": [
+        "Which is the largest planet?"
+      ],
+      "entities": [],
+      "constraints": [
+        {
+          "type": "condition",
+          "key": "correct_option",
+          "params": {
+            "expected": "B",
+            "options": [
+              "Earth",
+              "Jupiter",
+              "Mars",
+              "Saturn"
+            ]
+          },
+          "instruction_id": "",
+          "kwargs": {}
+        }
+      ],
+      "output_contract": {
+        "format": "short_answer",
+        "required_fields": [],
+        "constraints": {}
+      },
+      "verifier_spec": {
+        "type": "mcq_match",
+        "expected": "B",
+        "options": [
+          "Earth",
+          "Jupiter",
+          "Mars",
+          "Saturn"
+        ]
+      },
+      "environment": {},
+      "reference": {},
+      "lifecycle": [],
+      "superseded": [],
+      "model_commitments": []
+    },
+    "paths": {
+      "direct": {
+        "path_type": "direct",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Which is the largest planet? Options: A. Earth B. Jupiter C. Mars D. Saturn. Reply with the letter only."
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Answer the multiple-choice question with one letter.",
+          "facts": [
+            "Which is the largest planet?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "correct_option",
+              "params": {
+                "expected": "B",
+                "options": [
+                  "Earth",
+                  "Jupiter",
+                  "Mars",
+                  "Saturn"
+                ]
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "mcq_match",
+            "expected": "B",
+            "options": [
+              "Earth",
+              "Jupiter",
+              "Mars",
+              "Saturn"
+            ]
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 1,
+        "num_external_calls": 0,
+        "has_revision": false,
+        "revision_types": []
+      },
+      "introduce_only": {
+        "path_type": "introduce_only",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "I will ask a multiple-choice astronomy question. Answer with one letter."
+          },
+          {
+            "role": "assistant",
+            "content": "Understood."
+          },
+          {
+            "role": "user",
+            "content": "Which is the largest planet? Options: A. Earth B. Jupiter C. Mars D. Saturn. Reply with the letter only."
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Answer the multiple-choice question with one letter.",
+          "facts": [
+            "Which is the largest planet?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "correct_option",
+              "params": {
+                "expected": "B",
+                "options": [
+                  "Earth",
+                  "Jupiter",
+                  "Mars",
+                  "Saturn"
+                ]
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "mcq_match",
+            "expected": "B",
+            "options": [
+              "Earth",
+              "Jupiter",
+              "Mars",
+              "Saturn"
+            ]
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 2,
+        "num_external_calls": 0,
+        "has_revision": false,
+        "revision_types": []
+      },
+      "revision_containing": {
+        "path_type": "revision_containing",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Which planet is closest to the Sun? Options: A. Venus B. Earth C. Mercury D. Mars. Reply with the letter only."
+          },
+          {
+            "role": "assistant",
+            "content": "Understood."
+          },
+          {
+            "role": "user",
+            "content": "Change the question: Which is the largest planet? Options: A. Earth B. Jupiter C. Mars D. Saturn. Reply with the letter only."
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Answer the multiple-choice question with one letter.",
+          "facts": [
+            "Which is the largest planet?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "correct_option",
+              "params": {
+                "expected": "B",
+                "options": [
+                  "Earth",
+                  "Jupiter",
+                  "Mars",
+                  "Saturn"
+                ]
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "mcq_match",
+            "expected": "B",
+            "options": [
+              "Earth",
+              "Jupiter",
+              "Mars",
+              "Saturn"
+            ]
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 2,
+        "num_external_calls": 0,
+        "has_revision": true,
+        "revision_types": [
+          "replace"
+        ]
+      }
+    },
+    "accepted_answers": [
+      "B"
+    ],
+    "verifier_spec": {
+      "type": "mcq_match",
+      "expected": "B",
+      "options": [
+        "Earth",
+        "Jupiter",
+        "Mars",
+        "Saturn"
+      ]
+    },
+    "revision_depth": "single",
+    "terminal_revision_type": "replace",
+    "num_revisions": 1,
+    "selection_label": "coverage_fallback",
+    "construction_scores": {},
+    "stale_answer_witness": "C",
+    "metadata": {
+      "source": "hand_authored_demo",
+      "semantic_review": "hand_checked"
+    }
+  }
+]

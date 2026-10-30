@@ -1,0 +1,43 @@
+# ============================================================
+# TaskRevisionEval Configuration — LLM Provider Settings
+# ------------------------------------------------------------
+# Copy this file and fill in your provider details.
+# API keys are injected via environment variables, never stored here.
+# ============================================================
+
+# Default model (set to your provider's model ID)
+default_model: your-model-id
+default_provider: openai
+
+# Provider definitions
+providers:
+  openai:
+    type: openai_compatible_chat
+    base_url: https://api.openai.com/v1
+    api_key_env: OPENAI_API_KEY
+    model: your-model-id
+    temperature: 0
+    max_tokens: 2000
+    timeout_seconds: 120
+    max_tokens_param_name: max_tokens
+    models:
+      - your-model-id
+  # Example: any OpenAI-compatible endpoint
+  # custom:
+  #   type: openai_compatible_chat
+  #   base_url: https://your-endpoint.example.com/v1
+  #   api_key_env: YOUR_API_KEY_ENV
+  #   model: your-model-id
+  #   temperature: 0
+  #   max_tokens: 2000
+  #   timeout_seconds: 120
+  #   max_tokens_param_name: max_tokens
+  #   models:
+  #     - your-model-id
+
+# Construction parameters (paper Section 4)
+construction:
+  k_budget: 5
+  alpha: 0.5
+  gamma: 0.1
+  max_multi_revisions: 3

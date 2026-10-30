@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taskrevisioneval"
+version = "0.1.0"
+description = "Diagnosing Revision Sensitivity in LLMs with Shared-Endpoint Controls"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "TaskRevisionEval Authors"}]
+keywords = ["llm", "benchmark", "evaluation", "multi-turn", "revision", "diagnostic"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+llm = ["openai>=1.0"]
+data = ["datasets>=2.14"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.scripts]
+taskrevisioneval = "taskrevisioneval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["taskrevisioneval*"]

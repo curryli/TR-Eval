@@ -1,0 +1,215 @@
+[
+  {
+    "packet_id": "gsm8k-test-0000-replace-eggs-16-to-18",
+    "instance_id": "gsm8k-test-0000",
+    "family": "math_reasoning",
+    "endpoint_state": {
+      "goal": "Calculate Janet's daily revenue from selling the remaining eggs.",
+      "facts": [
+        "Janet’s ducks lay 18 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+      ],
+      "entities": [],
+      "constraints": [
+        {
+          "type": "condition",
+          "key": "answer_value",
+          "params": {
+            "expected": "22"
+          },
+          "instruction_id": "",
+          "kwargs": {}
+        }
+      ],
+      "output_contract": {
+        "format": "short_answer",
+        "required_fields": [],
+        "constraints": {}
+      },
+      "verifier_spec": {
+        "type": "numeric_match",
+        "expected": "22",
+        "tolerance": 0.001
+      },
+      "environment": {},
+      "reference": {},
+      "lifecycle": [],
+      "superseded": [],
+      "model_commitments": []
+    },
+    "paths": {
+      "direct": {
+        "path_type": "direct",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Janet’s ducks lay 18 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Calculate Janet's daily revenue from selling the remaining eggs.",
+          "facts": [
+            "Janet’s ducks lay 18 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "answer_value",
+              "params": {
+                "expected": "22"
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "numeric_match",
+            "expected": "22",
+            "tolerance": 0.001
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 1,
+        "num_external_calls": 0,
+        "has_revision": false,
+        "revision_types": []
+      },
+      "introduce_only": {
+        "path_type": "introduce_only",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "I have a daily egg sales word problem. Please calculate the revenue."
+          },
+          {
+            "role": "assistant",
+            "content": "Understood."
+          },
+          {
+            "role": "user",
+            "content": "Janet’s ducks lay 18 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Calculate Janet's daily revenue from selling the remaining eggs.",
+          "facts": [
+            "Janet’s ducks lay 18 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "answer_value",
+              "params": {
+                "expected": "22"
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "numeric_match",
+            "expected": "22",
+            "tolerance": 0.001
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 2,
+        "num_external_calls": 0,
+        "has_revision": false,
+        "revision_types": []
+      },
+      "revision_containing": {
+        "path_type": "revision_containing",
+        "dialogue": [
+          {
+            "role": "user",
+            "content": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+          },
+          {
+            "role": "assistant",
+            "content": "Understood."
+          },
+          {
+            "role": "user",
+            "content": "Correction: Janet's ducks lay 18 eggs per day, not 16. Keep all other details the same. How much in dollars does she make every day at the farmers' market?"
+          }
+        ],
+        "endpoint_state": {
+          "goal": "Calculate Janet's daily revenue from selling the remaining eggs.",
+          "facts": [
+            "Janet’s ducks lay 18 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
+          ],
+          "entities": [],
+          "constraints": [
+            {
+              "type": "condition",
+              "key": "answer_value",
+              "params": {
+                "expected": "22"
+              },
+              "instruction_id": "",
+              "kwargs": {}
+            }
+          ],
+          "output_contract": {
+            "format": "short_answer",
+            "required_fields": [],
+            "constraints": {}
+          },
+          "verifier_spec": {
+            "type": "numeric_match",
+            "expected": "22",
+            "tolerance": 0.001
+          },
+          "environment": {},
+          "reference": {},
+          "lifecycle": []
+        },
+        "num_turns": 2,
+        "num_external_calls": 0,
+        "has_revision": true,
+        "revision_types": [
+          "replace"
+        ]
+      }
+    },
+    "accepted_answers": [
+      "22"
+    ],
+    "verifier_spec": {
+      "type": "numeric_match",
+      "expected": "22",
+      "tolerance": 0.001
+    },
+    "revision_depth": "single",
+    "terminal_revision_type": "replace",
+    "num_revisions": 1,
+    "selection_label": "coverage_fallback",
+    "construction_scores": {},
+    "stale_answer_witness": "18",
+    "metadata": {
+      "source_dataset": "GSM8K",
+      "source_url": "https://github.com/openai/grade-school-math/blob/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+      "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c",
+      "source_split": "test",
+      "source_row_index": 0,
+      "construction": "replace daily egg count 16 with 18; recompute revenue",
+      "semantic_review": "worked example reviewed for endpoint equivalence"
+    }
+  }
+]

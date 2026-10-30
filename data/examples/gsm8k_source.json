@@ -1,0 +1,9 @@
+{
+  "source_dataset": "GSM8K",
+  "source_url": "https://github.com/openai/grade-school-math/blob/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/test.jsonl",
+  "split": "test",
+  "row_index": 0,
+  "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+  "answer": "18",
+  "source_commit": "3101c7d5072418e28b9008a6636bde82a006892c"
+}
